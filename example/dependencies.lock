@@ -1,0 +1,35 @@
+dependencies:
+  espressif/cmake_utilities:
+    component_hash: 351350613ceafba240b761b4ea991e0f231ac7a9f59a9ee901f751bddc0bb18f
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.1'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    version: 0.5.3
+  idf:
+    source:
+      type: idf
+    version: 5.4.0
+  nicolaielectronics/rvswd:
+    component_hash: 02ddf180e334afba2822b3474f318e8f13ec6626b565107ac0660c1f0cbc7e30
+    dependencies:
+    - name: espressif/cmake_utilities
+      registry_url: https://components.espressif.com
+      require: private
+      version: 0.*
+    - name: idf
+      require: private
+      version: '>=5.3'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 0.1.0
+direct_dependencies:
+- idf
+- nicolaielectronics/rvswd
+manifest_hash: 33d3568bd3ae7225fee460ca35818f3dcc7e4f99626318c87789aacc5e359b64
+target: esp32p4
+version: 2.0.0
