@@ -1,0 +1,7 @@
+dependencies:
+  cmake_utilities: 0.*
+  idf: '>=5.3'
+description: RVSWD programmer
+repository: git://github.com/Nicolai-Electronics/esp32-component-rvswd.git
+issues: https://github.com/Nicolai-Electronics/esp32-component-rvswd/issues
+url: https://github.com/Nicolai-Electronics/esp32-component-rvswd
