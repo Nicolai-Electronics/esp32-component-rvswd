@@ -6,14 +6,18 @@
 
 #include <inttypes.h>
 #include <stdio.h>
-#include "rvswd_ch32v203.h"
 #include "esp_err.h"
 #include "esp_log.h"
+#include "rvswd_ch32v20x.h"
 
 static const char* TAG = "example";
 
 extern uint8_t const coprocessor_firmware_start[] asm("_binary_coprocessor_bin_start");
 extern uint8_t const coprocessor_firmware_end[] asm("_binary_coprocessor_bin_end");
+
+void callback(char const* msg, uint8_t progress) {
+    ESP_LOGI(TAG, "%s: %d%%", msg, progress);
+}
 
 static void flash_coprocessor(void) {
     rvswd_handle_t handle = {
@@ -21,7 +25,10 @@ static void flash_coprocessor(void) {
         .swclk = 23,
     };
 
-    bool success = ch32_program(&handle, coprocessor_firmware_start, coprocessor_firmware_end - coprocessor_firmware_start);
+    ch32v20x_read_option_bytes(&handle);
+
+    bool success = ch32v20x_program(&handle, coprocessor_firmware_start,
+                                    coprocessor_firmware_end - coprocessor_firmware_start, callback);
 
     if (success) {
         ESP_LOGI(TAG, "Succesfully flashed the CH32V203 microcontroller");

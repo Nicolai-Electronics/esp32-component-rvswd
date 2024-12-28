@@ -1,7 +1,7 @@
 idf_component_register(
     SRCS
         "src/rvswd.c"
-        "src/rvswd_ch32v203.c"
+        "src/rvswd_ch32v20x.c"
     INCLUDE_DIRS
         "include"
     REQUIRES
