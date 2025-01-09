@@ -4,7 +4,10 @@ This component enables an ESP32 host to program an RVSWD compatible target. RVSW
 
 Currently the component only supports and has only been tested on the **CH32V203** microcontroller.
 
+## Background 
+
+This component has been developed for loading firmware onto the coprocessor of the [Tanmatsu](https://nicolaielectronics.nl/docs/tanmatsu/) dream terminal device for hackers, makers and tech enthousiasts.
+
 ## License
 
-This project will be made available under unmodified MIT license starting September of 2025. Until then the component is made available under a [modified, extended variant of the MIT license](LICENSE) which explicitly excludes a specific organization from using this component.
-
+This project is made available under the terms of the [MIT license](LICENSE).
